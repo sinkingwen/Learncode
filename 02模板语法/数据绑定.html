@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue数据绑定</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+  <!-- 准备好一个容器 -->
+  <div id="root">
+    <!-- 普通写法 -->
+    <!-- <h2>单向数据绑定</h2>
+    <input type="text" v-bind:value="url.name"><br>
+    <h2>双向数据绑定</h2>
+    <input type="text" v-model:value="url.name"> -->
+    <!-- 简写形式 -->
+    <h2>单向数据绑定</h2>
+    <input type="text" :value="url.name"><br>
+    <h2>双向数据绑定</h2>
+    <input type="text" v-model="url.name">
+  </div>
+</body>
+<script>
+  Vue.config.productionTip = false;
+  new Vue({
+    el: "#root",
+    data: {
+      name: "Vue2",
+      url: {
+        name: "中英文官网",
+        zh: "https://cn.vuejs.org/",
+        en: "https://vuejs.org/"
+      }
+    }
+  })
+</script>
+
+</html>
